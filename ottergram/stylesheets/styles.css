@@ -1,0 +1,166 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 10px;
+    background: rgb(215, 197, 149 / 0%);
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-header {
+    flex: 0 1 auto;
+}
+
+.logo-text {
+    background: white;
+
+    text-align: center;
+    /* //文本居中显示 */
+    text-transform: uppercase;
+    font-size: 37px;
+}
+
+.main-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .thumbnail-item+.thumbnail-item {
+    margin-top: 10px;
+} */
+
+.thumbnail-item {
+    /* display: block; */
+    display: inline-block;
+    min-width: 120px;
+    max-width: 120px;
+    border: 1px solid rgb(100%, 100%, 100%);
+    border: 1px solid rgba(100%, 100%, 100%, 0.8);
+    /* //两次声明使用了略有不同的颜色函数：rgb和rgba  
+    rgba颜色函数接受第四个参数，表示的是透明度，
+    不过有些浏览器并不支持rgba，因此声明两次是一种提供回退值的技巧 */
+
+    /* //所有浏览器在看到第一条声明(rgb)时，
+    都会将其值注册为border属性值，
+    当不支持rgba的浏览器看到第二条声明时，
+    会直接忽略，使用第一条声明中的值，
+    支持rgba的浏览器则会丢弃第一条声明，并使用第二次声明中的值 */
+}
+
+.thumbnail-list {
+    /* //去掉有序列表小黑点 */
+    flex: 0 1 auto;
+    order: 2;
+    display: flex;
+    justify-content: space-between;
+    /* //决定flex容器如何控制flex项目在主轴方向上的绘制，
+    使用space-between值，保证每个flex项目之间的空隙是相等的 */
+    list-style: none;
+    padding: 0;
+
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.thumbnail-image {
+    display: block;
+    width: 100%;
+}
+
+.thumbnail-title {
+    /* //新增的三条样式声明都会影响元素盒子，对于每个可见的HTML元素，
+    浏览器都会在页面中绘制一个矩形，浏览器使用 
+    一种名为标准和模型(简称盒模型)的防范决定这些矩形的大小 */
+    display: block;
+    margin: 0;
+    padding: 4px 10px;
+
+    background: rgb(96, 125, 139);
+    color: rgb(238, 238, 255);
+
+    font-size: 18px;    
+}
+
+.detail-image-container {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-image-frame {
+    text-align: center;
+    position: relative;
+}
+
+.detail-image {
+    width: 90%;
+}
+
+.detail-image-title {
+    position: absolute;
+    bottom: -16px;
+    left: 4px;
+
+    /* font-family: airstreamregular; */
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px;
+    font-size: 37px;
+    /* text-transform: uppercase; */
+}
+
+.hidden-detail .detail-image-container {
+    display: none;
+}
+
+/* 为了隐藏.detail-image-container,
+可以通过添加一条声明来将元素设为display:none,
+可告诉浏览器该元素不应该被渲染  */
+.hidden-detail .thumbnail-list {
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden-detail .thumbnail-item {
+    max-width: 80%;
+}
+
+@media all and (min-width:768px) {
+
+    /* 添加媒体查询 */
+    /* 媒体查询允许我们将CSS声明进行分组，
+    指定应用这些样式的条件，这些条件可能类似于
+    “屏幕最低宽度为640px”或“屏幕宽度大于高度且拥有高像素密度” */
+    /* 此处放置样式 */
+    .main-content {
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .thumbnail-list {
+        flex-direction: column;
+        order: 0;
+        margin-left: 20px;
+    }
+
+    .thumbnail-item {
+        max-width: 260px;
+    }
+
+    .thumbnail-item+.thumbnail-item {
+        margin-top: 20px;
+    }
+}
+
+/* 视觉效果：第一个效果是简单的布局变化，隐藏大图，
+并使缩略图与页面同宽，当用户单机一张缩略图时，
+大图重新出现，缩略图变回原来的尺寸 */

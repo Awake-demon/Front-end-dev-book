@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- //定义doctype（文档类型）,告诉浏览器当前文档是用哪个版本的HTML
+编写,doctype不同,浏览器渲染/绘制的页面可能也略有不同； -->
+<html lang="en">
+
+<head>
+    <!-- //中包含文档信息，以及浏览器如何处理文档的相关信息，
+    比如说文档标题,页面使用的CSS/JavaScript文件,
+    文档上次修改的时间等都包括在 head 中； -->
+    <meta charset="UTF-8">
+    <!-- //指定文档由包含所有Unicode字符的UTF-8字符集进行编码 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTTERGRAM</title>
+    <link rel="icon" type="ottergram/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <!-- //通过link标签,可以给HTML文档附加外部样式表,
+    有两个属性,向浏览器提供更多关于该标签用途的信息 -->
+    <script src="scripts/main.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <!-- //中包含所有代表页面内容的HTML代码:页面中出现的所有图片、
+        链接、文本、按钮、视频等； -->
+    <header class="main-header">
+        <h1 class="logo-text">OTTERGRAM</h1>
+    </header>
+    <main class="main-content">
+        <ul class="thumbnail-list">
+            <li class="thumbnail-item">
+                <a href="ottergram-resources/img/otter1.jpg" data-image-role="trigger" data-image-title="Styin'Alive"
+                    data-image-url="ottergram-resources/img/otter1.jpg">
+                    <!-- //锚标签使页面元素可以点击，从而将用户带到另一个页面，
+                            它们通常被称为“链接”，但请注意，这和之前用到的<link>标签完全是两回事 -->
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter1.jpg" alt="Barry the Otter">
+                    <span class="thumbnail-title">Barry</span>
+                </a>
+            </li>
+            <li class="thumbnail-item">
+                <a href="ottergram-resources/img/otter2.jpg" data-image-role="trigger"
+                    data-image-title="How Deep Is Your Love" data-image-url="ottergram-resources/img/otter2.jpg">
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter2.jpg" alt="Robin the Otter">
+                    <span class="thumbnail-title">Robin</span>
+                </a>
+            </li>
+            <li class="thumbnail-item">
+                <a href="ottergram-resources/img/otter3.jpg" data-image-role="trigger"
+                    data-image-title="You Should Be Dancing" data-image-url="ottergram-resources/img/otter3.jpg">
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter3.jpg" alt="Maurice the Otter">
+                    <span class="thumbnail-title">Maurice</span>
+                </a>
+            </li>
+            <li class="thumbnail-item">
+                <a href="ottergram-resources/img/otter4.jpg" data-image-role="trigger" data-image-title="Night Fever"
+                    data-image-url="ottergram-resources/img/otter4.jpg">
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter4.jpg" alt="Lesley the Otter">
+                    <span class="thumbnail-title">Lesley</span>
+                </a>
+            </li>
+            <li class="thumbnail-item">
+                <a href="ottergram-resources/img/otter5.jpg" data-image-role="trigger"
+                    data-image-title="To Love Somebody" data-image-url="ottergram-resources/img/otter5.jpg">
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter5.jpg" alt="Barbara the Otter">
+                    <span class="thumbnail-title">Barbara</span>
+                </a>
+            </li>
+
+            <li class="thumbnail-item">
+                <a href="#">
+                    <!-- //锚标签使页面元素可以点击，从而将用户带到另一个页面，
+                            它们通常被称为“链接”，但请注意，这和之前用到的<link>标签完全是两回事 -->
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter1.jpg" alt="Barry the Otter">
+                    <span class="thumbnail-title">Barry</span>
+                </a>
+            </li>
+            <li class="thumbnail-item">
+                <a href="#">
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter2.jpg" alt="Robin the Otter">
+                    <span class="thumbnail-title">Robin</span>
+                </a>
+            </li>
+            <li class="thumbnail-item">
+                <a href="#">
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter3.jpg" alt="Maurice the Otter">
+                    <span class="thumbnail-title">Maurice</span>
+                </a>
+            </li>
+            <li class="thumbnail-item">
+                <a href="#">
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter4.jpg" alt="Lesley the Otter">
+                    <span class="thumbnail-title">Lesley</span>
+                </a>
+            </li>
+            <li class="thumbnail-item">
+                <a href="#">
+                    <img class="thumbnail-image" src="ottergram-resources/img/otter5.jpg" alt="Barbara the Otter">
+                    <span class="thumbnail-title">Barbara</span>
+                </a>
+            </li>
+        </ul>
+        <div class="detail-image-container">
+            <div class="detail-image-wrapper">
+                <img class="detail-image" data-image-role="target" src="ottergram-resources/img/otter1.jpg" alt="">
+                <span class="detail-image-title" data-image-role="title">Stayin'Alive</span>
+            </div>
+        </div>
+        <!-- //添加一个类名为detail-image-container的<div>  
+            <div>是长哟个的内容容器，通常用于为一段内容添加样式
+            在<div>中添加了用于展示大图的<img>以及一个包裹着大图标题的<span> 
+            分别为<img>和<span>添加类名detail-image和detail-title -->
+    </main>
+</body>
+
+</html>
